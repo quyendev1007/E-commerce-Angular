@@ -1,0 +1,24 @@
+<section class="container mx-auto px-4 py-16">
+  <div class="mb-8">
+    <div>
+      <div class="flex items-center mb-4">
+        <div class="w-5 h-10 bg-red-500 rounded mr-4"></div>
+        <span class="text-red-500 font-semibold">This Month</span>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <h2 class="text-4xl font-bold">Best Selling Products</h2>
+      <button
+        class="bg-red-500 text-white px-8 py-3 rounded hover:bg-red-600 transition-colors"
+      >
+        View All
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-4 gap-6">
+    @for(_ of list; track $index){
+    <app-product-item />
+    }
+  </div>
+</section>

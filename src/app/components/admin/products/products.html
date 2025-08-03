@@ -1,0 +1,56 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500">
+    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white">
+      Our products
+      <button class="border rounded px-1 mx-3">
+        <a href="/admin/add-product">Thêm mới sản phẩm</a>
+      </button>
+    </caption>
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th class="px-6 py-3">Product name</th>
+        <th class="px-6 py-3">Image</th>
+        <th class="px-6 py-3">Description</th>
+        <th class="px-6 py-3">Price</th>
+        <th class="px-6 py-3">Quantity</th>
+        <th class="px-6 py-3">Brand</th>
+        <th class="px-6 py-3">Category</th>
+        <th class="px-6 py-3">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products; track $index) {
+      <tr class="bg-white border-b border-gray-200">
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+        >
+          {{ product.name }}
+        </th>
+        <td class="px-6 py-4">
+          <img [src]="product.image" class="w-16" alt="{{ product.name }}" />
+        </td>
+        <td class="px-6 py-4">{{ product.description }}</td>
+        <td class="px-6 py-4">{{ product.price }} VND</td>
+        <td class="px-6 py-4">{{ product.quantity }}</td>
+        <td class="px-6 py-4">{{ product.brand_id.name }}</td>
+        <td class="px-6 py-4">{{ product.category_id.name }}</td>
+        <td class="px-6 py-4">
+          <a
+            [routerLink]="['/admin/edit-product', product._id]"
+            class="border rounded p-1 mx-2 font-medium text-blue-600 hover:underline"
+          >
+            Edit
+          </a>
+          <button
+            (click)="handleDelete(product._id)"
+            class="border rounded p-1 my-2 font-medium text-red-600 hover:underline"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

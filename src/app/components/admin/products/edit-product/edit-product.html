@@ -1,0 +1,138 @@
+<div class="max-w-4xl mx-auto mt-8 bg-white p-6 rounded shadow">
+  <h2 class="text-2xl font-semibold mb-4">Cập nhật sản phẩm</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="flex gap-4 mb-4">
+      <div class="w-1/2">
+        <label class="block text-gray-700 font-medium mb-2">Tên sản phẩm</label>
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Nhập tên sản phẩm..."
+          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        @if (productForm.controls.name.invalid &&
+        (productForm.controls.name.touched || productForm.controls.name.dirty))
+        {
+        <p class="text-red-600 text-sm">Tên sản phẩm phải có ít nhất 3 ký tự</p>
+        }
+      </div>
+
+      <div class="w-1/2">
+        <label class="block text-gray-700 font-medium mb-2">Giá (VND)</label>
+        <input
+          type="number"
+          formControlName="price"
+          placeholder="Nhập giá sản phẩm..."
+          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        @if (productForm.controls.price.invalid &&
+        (productForm.controls.price.touched ||
+        productForm.controls.price.dirty)) {
+        <p class="text-red-600 text-sm">Giá không hợp lệ</p>
+        }
+      </div>
+    </div>
+
+    <div class="flex gap-4 mb-4">
+      <div class="w-1/2">
+        <label class="block text-gray-700 font-medium mb-2">Link ảnh</label>
+        <input
+          type="text"
+          formControlName="image"
+          placeholder="Nhập URL ảnh..."
+          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        @if (productForm.controls.image.invalid &&
+        (productForm.controls.image.touched ||
+        productForm.controls.image.dirty)) {
+        <p class="text-red-600 text-sm">Ảnh là bắt buộc</p>
+        }
+      </div>
+
+      <div class="w-1/2">
+        <label class="block text-gray-700 font-medium mb-2">Số lượng</label>
+        <input
+          type="number"
+          formControlName="quantity"
+          placeholder="Nhập số lượng..."
+          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        @if (productForm.controls.quantity.invalid &&
+        (productForm.controls.quantity.touched ||
+        productForm.controls.quantity.dirty)) {
+        <p class="text-red-600 text-sm">Số lượng không hợp lệ</p>
+        }
+      </div>
+    </div>
+
+    <div class="flex gap-4 mb-4">
+      <div class="w-1/2">
+        <label class="block text-gray-700 font-medium mb-2">Thương hiệu</label>
+        <select
+          formControlName="brand_id"
+          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="" disabled selected>Chọn thương hiệu</option>
+          @for (brand of brands; track $index) {
+          <option [value]="brand._id">
+            {{ brand.name }}
+          </option>
+          }
+        </select>
+        @if (productForm.controls.brand_id.invalid &&
+        productForm.controls.brand_id.touched) {
+        <p class="text-red-600 text-sm">Vui lòng chọn thương hiệu</p>
+        }
+      </div>
+
+      <div class="w-1/2">
+        <label class="block text-gray-700 font-medium mb-2">Danh mục</label>
+        <select
+          formControlName="category_id"
+          class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="" disabled selected>Chọn danh mục</option>
+          @for (category of categories; track $index) {
+          <option [value]="category._id">{{ category.name }}</option>
+          }
+        </select>
+        @if (productForm.controls.category_id.invalid &&
+        productForm.controls.category_id.touched) {
+        <p class="text-red-600 text-sm">Vui lòng chọn danh mục</p>
+        }
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Mô tả</label>
+      <textarea
+        formControlName="description"
+        rows="3"
+        placeholder="Nhập mô tả sản phẩm..."
+        class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+      ></textarea>
+      @if (productForm.controls.description.invalid &&
+      (productForm.controls.description.touched ||
+      productForm.controls.description.dirty)) {
+      <p class="text-red-600 text-sm">Mô tả phải có ít nhất 3 ký tự</p>
+      }
+    </div>
+
+    <div class="flex justify-end space-x-2 mt-6">
+      <button
+        type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded"
+        [disabled]="productForm.invalid"
+      >
+        Cập nhật sản phẩm
+      </button>
+      <a
+        href="/admin/products"
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium px-4 py-2 rounded"
+      >
+        Huỷ
+      </a>
+    </div>
+  </form>
+</div>

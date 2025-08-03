@@ -1,0 +1,42 @@
+<div class="max-w-md mx-auto mt-8 bg-white p-6 rounded shadow">
+  <h2 class="text-2xl font-semibold mb-4">Thêm mới danh mục</h2>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="categoryForm">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 font-medium mb-2">
+        Tên danh mục
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        formControlName="name"
+        required
+        class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Nhập tên danh mục..."
+      />
+      @if(!categoryForm.controls.name.valid && (categoryForm.controls.name.dirty
+      || categoryForm.controls.name.touched)) {
+      <p class="text-red-600">
+        Tên danh mục không được để trống và phải lớn hơn 3 ký tự
+      </p>
+
+      }
+    </div>
+
+    <div class="flex justify-end space-x-2">
+      <button
+        type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded"
+      >
+        Thêm
+      </button>
+      <a
+        href="/admin/categories"
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium px-4 py-2 rounded"
+      >
+        Huỷ
+      </a>
+    </div>
+  </form>
+</div>

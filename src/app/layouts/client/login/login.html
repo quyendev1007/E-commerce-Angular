@@ -1,0 +1,186 @@
+<div class="pr-15 pt-16 pb-26">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div
+      class="bg-gradient-to-br from-blue-100 to-teal-100 rounded-lg p-8 flex items-center justify-center min-h-[500px]"
+    >
+      <div class="relative">
+        <div class="relative z-10">
+          <svg
+            width="200"
+            height="150"
+            viewBox="0 0 200 150"
+            class="text-gray-600"
+          >
+            <rect
+              x="20"
+              y="40"
+              width="120"
+              height="80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              rx="5"
+            />
+            <path
+              d="M20 40 L10 40 Q5 40 5 35 L5 25 Q5 20 10 20 L30 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle cx="40" cy="135" r="8" fill="currentColor" />
+            <circle cx="120" cy="135" r="8" fill="currentColor" />
+            <line
+              x1="30"
+              y1="50"
+              x2="130"
+              y2="50"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <line
+              x1="30"
+              y1="70"
+              x2="130"
+              y2="70"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <line
+              x1="30"
+              y1="90"
+              x2="130"
+              y2="90"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <line
+              x1="30"
+              y1="110"
+              x2="130"
+              y2="110"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <line
+              x1="50"
+              y1="40"
+              x2="50"
+              y2="120"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <line
+              x1="80"
+              y1="40"
+              x2="80"
+              y2="120"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+            <line
+              x1="110"
+              y1="40"
+              x2="110"
+              y2="120"
+              stroke="currentColor"
+              stroke-width="1"
+            />
+          </svg>
+        </div>
+
+        <div
+          class="absolute top-0 right-0 transform translate-x-8 -translate-y-4"
+        >
+          <div class="w-24 h-40 bg-gray-800 rounded-lg shadow-lg relative">
+            <div
+              class="w-20 h-32 bg-gray-900 rounded-md absolute top-2 left-2"
+            ></div>
+            <div
+              class="w-8 h-1 bg-gray-600 rounded absolute top-1 left-8"
+            ></div>
+            <div
+              class="w-8 h-1 bg-gray-600 rounded absolute bottom-1 left-8"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Shopping Bags -->
+        <div
+          class="absolute bottom-0 left-0 transform -translate-x-4 translate-y-2"
+        >
+          <!-- Pink Bag -->
+          <div
+            class="w-12 h-16 bg-pink-300 rounded-t-lg relative mr-2 inline-block"
+          >
+            <div
+              class="w-2 h-4 bg-pink-400 absolute top-0 left-2 rounded-t"
+            ></div>
+            <div
+              class="w-2 h-4 bg-pink-400 absolute top-0 right-2 rounded-t"
+            ></div>
+          </div>
+          <!-- Blue Bag -->
+          <div class="w-12 h-16 bg-blue-300 rounded-t-lg relative inline-block">
+            <div
+              class="w-2 h-4 bg-blue-400 absolute top-0 left-2 rounded-t"
+            ></div>
+            <div
+              class="w-2 h-4 bg-blue-400 absolute top-0 right-2 rounded-t"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-md mx-auto w-full">
+      <div class="space-y-6">
+        <div class="text-center lg:text-left">
+          <h1 class="text-3xl font-bold text-gray-900 mb-2">
+            Log in to Exclusive
+          </h1>
+          <p class="text-gray-600">Enter your details below</p>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+          <div>
+            <input
+              type="text"
+              id="emailOrPhone"
+              placeholder="Email or Phone Number"
+              class="w-full px-0 py-3 border-0 border-b-2 border-gray-200 focus:border-primary focus:outline-none focus:ring-0 text-gray-900 placeholder-gray-500"
+              required
+            />
+          </div>
+
+          <div class="relative">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              class="w-full px-0 py-3 border-0 border-b-2 border-gray-200 focus:border-primary focus:outline-none focus:ring-0 text-gray-900 placeholder-gray-500 pr-10"
+              required
+            />
+            <button
+              type="button"
+              class="absolute right-0 top-3 text-gray-500 hover:text-gray-700"
+            >
+              <i id="passwordToggle" class="far fa-eye"></i>
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              class="bg-red-500 text-white px-8 py-3 rounded hover:bg-red-600 transition-colors font-medium"
+            >
+              Log In
+            </button>
+            <a href="#" class="text-red-500 hover:text-red-600 text-sm"
+              >Forgot Password?</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
