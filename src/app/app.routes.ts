@@ -13,6 +13,8 @@ import { AddProduct } from './components/admin/products/add-product/add-product'
 import { EditProduct } from './components/admin/products/edit-product/edit-product';
 import { AddCategory } from './components/admin/categories/add-category/add-category';
 import { EditCategory } from './components/admin/categories/edit-category/edit-category';
+import { Register } from './layouts/client/register/register';
+import { adminGuard } from './guards/admin-guard';
 
 export const routes: Routes = [
   {
@@ -21,13 +23,15 @@ export const routes: Routes = [
     children: [
       { path: '', component: Home },
       { path: 'login', component: Login },
-      { path: 'categories', component: Category },
-      { path: 'details', component: Detail },
+      { path: 'register', component: Register },
+      { path: 'categories/:id', component: Category },
+      { path: 'details/:id', component: Detail },
     ],
   },
   {
     path: 'admin',
     component: Admin,
+    // canActivate: [adminGuard],
     children: [
       { path: '', component: Dashboard },
       { path: 'products', component: Products },

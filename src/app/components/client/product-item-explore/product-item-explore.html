@@ -39,11 +39,13 @@
     >
       Add To Cart
     </button>
-    <img
-      [src]="product.image"
-      [alt]="product.name"
-      class="w-full h-48 object-contain"
-    />
+    <a [routerLink]="['/details', product._id]">
+      <img
+        [src]="product.image"
+        [alt]="product.name"
+        class="w-full h-48 object-contain"
+      />
+    </a>
   </div>
   <h3 class="font-medium mb-2">{{ product.name }}</h3>
   <div class="flex gap-2 items-center space-x-2 mb-2">

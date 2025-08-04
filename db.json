@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": "688a43f2d49835f0eee22d16",
+      "name": "new pro 015",
+      "price": 15900000,
+      "description": "new product",
+      "image": [
+        "https://picsum.photos/200?random=15",
+        "https://picsum.photos/200?random=16",
+        "https://picsum.photos/200?random=17",
+        "https://picsum.photos/200?random=18",
+        "https://picsum.photos/200?random=19"
+      ],
+      "quantity": 23,
+      "category_id": 1
+    },
+    {
+      "id": "6886138a0670ebc0a5100d8e",
+      "name": "new pro 014 ",
+      "price": 34000000,
+      "description": "asd",
+      "image": [
+        "https://picsum.photos/200?random=19",
+        "https://picsum.photos/200?random=20",
+        "https://picsum.photos/200?random=21",
+        "https://picsum.photos/200?random=22",
+        "https://picsum.photos/200?random=23"
+      ],
+      "quantity": 2,
+      "category_id": 3
+    },
+    {
+      "id": "6886136c0670ebc0a5100d84",
+      "name": "new pro 013",
+      "price": 31000000,
+      "description": "asd",
+      "image": [
+        "https://picsum.photos/200?random=24",
+        "https://picsum.photos/200?random=25",
+        "https://picsum.photos/200?random=26",
+        "https://picsum.photos/200?random=27",
+        "https://picsum.photos/200?random=28"
+      ],
+      "quantity": 2,
+      "category_id": 1
+    },
+    {
+      "id": "688613530670ebc0a5100d7a",
+      "name": "new pro 012",
+      "price": 24590000,
+      "description": "mt",
+      "image": [
+        "https://picsum.photos/200?random=13",
+        "https://picsum.photos/200?random=14",
+        "https://picsum.photos/200?random=15",
+        "https://picsum.photos/200?random=16",
+        "https://picsum.photos/200?random=17"
+      ],
+      "quantity": 5,
+      "category_id": 2
+    },
+    {
+      "_id": "688613360670ebc0a5100d70",
+      "name": "new pro 011",
+      "price": 23000000,
+      "description": "mt",
+      "image": [
+        "https://picsum.photos/200?random=1",
+        "https://picsum.photos/200?random=2",
+        "https://picsum.photos/200?random=3",
+        "https://picsum.photos/200?random=4",
+        "https://picsum.photos/200?random=5"
+      ],
+      "quantity": 10,
+      "category_id": 1
+    },
+    {
+      "_id": "688612910670ebc0a5100d0f",
+      "name": "new pro 009",
+      "price": 15900000,
+      "description": "mt",
+      "image": [
+        "https://picsum.photos/200?random=6",
+        "https://picsum.photos/200?random=7",
+        "https://picsum.photos/200?random=8",
+        "https://picsum.photos/200?random=9",
+        "https://picsum.photos/200?random=10"
+      ],
+      "quantity": 3,
+      "category_id": 1
+    },
+    {
+      "_id": "688612710670ebc0a5100d05",
+      "name": "new pro 008",
+      "price": 50000000,
+      "description": "mo ta",
+      "image": [
+        "https://picsum.photos/200?random=10",
+        "https://picsum.photos/200?random=11",
+        "https://picsum.photos/200?random=12",
+        "https://picsum.photos/200?random=13",
+        "https://picsum.photos/200?random=14"
+      ],
+      "quantity": 2,
+      "category_id": 1
+    },
+    {
+      "_id": "688612560670ebc0a5100cfb",
+      "name": "new pro 007",
+      "price": 45000000,
+      "description": "mo ta",
+      "image": [
+        "https://picsum.photos/200?random=9",
+        "https://picsum.photos/200?random=10",
+        "https://picsum.photos/200?random=11",
+        "https://picsum.photos/200?random=12",
+        "https://picsum.photos/200?random=13"
+      ],
+      "quantity": 2,
+      "category_id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "mobile"
+    },
+    {
+      "id": 2,
+      "name": "laptop"
+    },
+    {
+      "id": 3,
+      "name": "tablet"
+    }
+  ],
+  "users": []
+}

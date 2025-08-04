@@ -17,6 +17,7 @@ export interface IProduct {
   price: number;
   description: string;
   image: string;
+  galleries: string[];
   quantity: number;
   brand_id: IBrand;
   category_id: ICategory;

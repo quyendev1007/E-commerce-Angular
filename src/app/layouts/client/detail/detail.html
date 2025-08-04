@@ -12,49 +12,26 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
     <div class="flex">
       <div class="flex-1/4 flex flex-col justify-between">
+        @for (item of product.galleries.slice(0, 4); track $index) {
+
         <div
           class="w-25 h-30 bg-gray-100 rounded-lg p-2 cursor-pointer border-2 border-transparent hover:border-red-500"
+          (click)="changeImage(item)"
         >
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQHiCIJlxEtHQ8Ga3Ua3PT1NkKkbtaQNfqQ&s"
+            [src]="item"
             alt="Gamepad view 1"
             class="w-full h-full object-contain"
           />
         </div>
-        <div
-          class="w-25 h-30 bg-gray-100 rounded-lg p-2 cursor-pointer border-2 border-transparent hover:border-red-500"
-        >
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQHiCIJlxEtHQ8Ga3Ua3PT1NkKkbtaQNfqQ&s"
-            alt="Gamepad view 2"
-            class="w-full h-full object-contain"
-          />
-        </div>
-        <div
-          class="w-25 h-30 bg-gray-100 rounded-lg p-2 cursor-pointer border-2 border-transparent hover:border-red-500"
-        >
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQHiCIJlxEtHQ8Ga3Ua3PT1NkKkbtaQNfqQ&s"
-            alt="Gamepad view 3"
-            class="w-full h-full object-contain"
-          />
-        </div>
-        <div
-          class="w-25 h-30 bg-gray-100 rounded-lg p-2 cursor-pointer border-2 border-transparent hover:border-red-500"
-        >
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQHiCIJlxEtHQ8Ga3Ua3PT1NkKkbtaQNfqQ&s"
-            alt="Gamepad view 4"
-            class="w-full h-full object-contain"
-          />
-        </div>
+        }
       </div>
       <div
         class="flex-3/4 bg-gray-100 rounded-lg p-8 flex items-center justify-center"
       >
         <img
           id="mainImage"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQHiCIJlxEtHQ8Ga3Ua3PT1NkKkbtaQNfqQ&s"
+          [src]="currentImage"
           alt="Havic HV G-92 Gamepad"
           class="w-full max-w-md h-auto object-contain"
         />
@@ -64,7 +41,7 @@
     <div class="">
       <div>
         <h1 class="text-3xl font-bold text-gray-900 mb-2">
-          Havic HV G-92 Gamepad
+          {{ product.name }}
         </h1>
         <div class="flex items-center space-x-4 mb-4">
           <div class="flex text-yellow-400">
@@ -85,14 +62,14 @@
           <span class="text-gray-300">|</span>
           <span class="text-green-500 text-sm">In Stock</span>
         </div>
-        <div class="text-3xl font-bold text-gray-900 mb-4">$192.00</div>
+        <div class="text-3xl font-bold text-gray-900 mb-4">
+          {{ product.price }} Đ
+        </div>
       </div>
 
       <div class="border-b border-gray-200 pb-6">
         <p class="text-gray-600 leading-relaxed">
-          PlayStation 5 Controller Skin High quality vinyl with air channel
-          adhesive for easy bubble free install & mess free removal Pressure
-          sensitive.
+          {{ product.description }}
         </p>
       </div>
 
@@ -223,7 +200,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       @for (item of list; track $index) {
-      <app-product-item />
+      <app-product-item-explore [product]="item" />
       }
     </div>
   </section>

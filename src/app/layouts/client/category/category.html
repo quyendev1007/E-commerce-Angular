@@ -1,51 +1,15 @@
 <main class="container">
-  <h6 class="text-xl font-bold mb-8 mt-3.5">Category name</h6>
+  <h6 class="text-xl font-bold mb-8 mt-3.5">{{ categoryName }}</h6>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-    @for (item of list; track $index) {
-
-    <app-product-item-explore />
-    }
-  </div>
-
-  <div class="flex justify-center items-center space-x-2 mb-12">
-    <button
-      class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50"
-      disabled
+    @if(products.length === 0) {
+    <div
+      class="col-span-4 text-center h-52 flex items-center justify-center text-5xl text-red-500"
     >
-      <svg
-        class="w-3.5"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 320 512"
-      >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
-        />
-      </svg>
-    </button>
-    <button class="px-4 py-2 bg-red-500 text-white rounded">1</button>
-    <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">
-      2
-    </button>
-    <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">
-      3
-    </button>
-    <span class="px-2">...</span>
-    <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">
-      10
-    </button>
-    <button class="px-3 py-2 border border-gray-300 rounded hover:bg-gray-50">
-      <svg
-        class="w-3.5"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 320 512"
-      >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
-        />
-      </svg>
-    </button>
+      Hiện không có sản phẩm nào
+    </div>
+    }@else { @for (item of products; track $index) {
+    <app-product-item-explore [product]="item" />
+    } }
   </div>
 </main>
