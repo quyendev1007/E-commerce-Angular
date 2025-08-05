@@ -24,3 +24,23 @@ export interface IProduct {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface IUser {
+  _id: string;
+  username: string;
+  email: string;
+  password?: string;
+  phone?: string;
+  role: 'user' | 'admin';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IComment {
+  _id: string;
+  content: string;
+  product_id: string;
+  user_id: IUser;
+  createdAt: string;
+  updatedAt: string;
+}

@@ -35,17 +35,26 @@
         class="hover:text-primary border-b-2 border-transparent hover:border-primary pb-1"
         >About</a
       >
+      @if(!isLogin){
       <a
-        href="#"
+        href="/login"
         class="hover:text-primary border-b-2 border-transparent hover:border-primary pb-1"
-        >Sign Up</a
+        >Login</a
       >
+      }@else {
+      <span
+        (click)="logout()"
+        class="cursor-pointer hover:text-primary border-b-2 border-transparent hover:border-primary pb-1"
+        >Logout</span
+      >
+      }
     </nav>
 
     <div class="flex items-center space-x-4">
       <div class="relative">
         <input
           type="text"
+          (input)="searchProduct($event.target.value)"
           placeholder="What are you looking for?"
           class="bg-gray-100 px-6 w-65 py-2 pr-10 rounded focus:outline-none focus:ring-2 focus:ring-primary"
         />
@@ -55,11 +64,34 @@
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
-          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
           <path
             d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
           />
         </svg>
+        @if(productSearch.length > 0){
+        <div
+          class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded shadow-md z-50"
+        >
+          @for (product of productSearch; track $index) {
+          <p
+            (click)="handleNavigate(product._id)"
+            class="block cursor-pointer px-4 py-2 hover:bg-gray-100 text-black"
+          >
+            {{ product.name }}
+          </p>
+          }
+        </div>
+        } @if(searchQuery && productSearch.length === 0) {
+        <div
+          class="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded shadow-md z-50"
+        >
+          <p
+            class="block cursor-pointer px-4 py-2 hover:bg-gray-100 text-black"
+          >
+            No results found
+          </p>
+        </div>
+        }
       </div>
       <svg
         class="w-5 cursor-pointer"
@@ -79,6 +111,17 @@
           d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
         />
       </svg>
+      @if (isLogin) {
+      <svg
+        class="w-5 cursor-pointer"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 640 640"
+      >
+        <path
+          d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"
+        />
+      </svg>
+      }
     </div>
   </div>
 </header>

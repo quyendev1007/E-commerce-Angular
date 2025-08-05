@@ -204,4 +204,61 @@
       }
     </div>
   </section>
+
+  <!-- Comment Section -->
+  <section class="mb-16">
+    <div class="flex items-center mb-6">
+      <div class="w-5 h-10 bg-red-500 rounded mr-4"></div>
+      <h2 class="text-2xl text-red-500 font-bold">Comments</h2>
+    </div>
+
+    <!-- Comment List -->
+    <div class="space-y-6 mb-10">
+      @for (comment of comments; track $index) {
+
+      <div class="border border-gray-200 rounded-lg p-4">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+            <div>
+              <h4 class="font-semibold text-gray-800">
+                {{ comment.user_id.username }}
+              </h4>
+              <p class="text-sm text-gray-500">
+                {{ comment.createdAt.slice(0, 10) }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700">
+          {{ comment.content }}
+        </p>
+      </div>
+      }
+    </div>
+
+    <div class="border border-gray-200 rounded-lg p-6">
+      <form [formGroup]="commentForm" (ngSubmit)="addNewComment()">
+        <div class="mb-4">
+          <textarea
+            rows="4"
+            formControlName="content"
+            placeholder="Your Comment"
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+          ></textarea>
+          @if(!commentForm.controls.content.valid &&
+          (commentForm.controls.content.touched ||
+          commentForm.controls.content.dirty)){
+          <p class="text-red-400">Bình luận tối thiểu 3 ký tự</p>
+          }
+        </div>
+
+        <button
+          class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 transition-colors"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
 </main>

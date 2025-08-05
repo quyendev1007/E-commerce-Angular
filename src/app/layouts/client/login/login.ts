@@ -34,6 +34,7 @@ export class Login {
       next: (response: any) => {
         alert('Đăng nhập thành công');
         localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('userInfo', JSON.stringify(response));
         this.router.navigate(['/admin']);
       },
       error: (error) => {
